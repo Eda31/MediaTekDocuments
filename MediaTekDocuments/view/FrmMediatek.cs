@@ -496,7 +496,7 @@ namespace MediaTekDocuments.view
             }
             */
         }
-
+         
 
         #endregion
 
@@ -2125,7 +2125,7 @@ namespace MediaTekDocuments.view
         /// <param name="acces">true ou false</param>
         private void AccesReceptionCommandeGroupBoxRevue(bool acces)
         {
-            GrpAjoutCommandesDVD.Enabled = acces;
+            GrpAjoutCommandesRevue.Enabled = acces;
             TxbNumeroCommandeRevue.Text = "";
             DtpCommandeDateRevue.Value = DateTime.Now;
             TxbMontantCommandeRevue.Text = "";
