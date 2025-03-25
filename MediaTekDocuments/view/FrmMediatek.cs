@@ -1820,7 +1820,7 @@ namespace MediaTekDocuments.view
         /// <param name="acces">true ou false</param>
         private void AccesReceptionCommandeGroupBoxDvd(bool acces)
         {
-            GrpAjoutCommandesRevue.Enabled = acces;
+            grpAjoutCommandesDvd.Enabled = acces;
             txbNumeroCommandeDVD.Text = "";
             dtpCommandeDateDVD.Value = DateTime.Now;
             txbMontantCommandeDVD.Text = "";

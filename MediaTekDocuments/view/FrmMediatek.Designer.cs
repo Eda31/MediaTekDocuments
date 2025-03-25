@@ -249,7 +249,7 @@ namespace MediaTekDocuments.view
             this.BtnModifCommandeDVD = new System.Windows.Forms.Button();
             this.cbxNouvelleEtapeDVD = new System.Windows.Forms.ComboBox();
             this.label86 = new System.Windows.Forms.Label();
-            this.GrpAjoutCommandesRevue = new System.Windows.Forms.GroupBox();
+            this.grpAjoutCommandesDvd = new System.Windows.Forms.GroupBox();
             this.txbNumDVDCom = new System.Windows.Forms.TextBox();
             this.label87 = new System.Windows.Forms.Label();
             this.txbNumeroCommandeDVD = new System.Windows.Forms.TextBox();
@@ -364,7 +364,6 @@ namespace MediaTekDocuments.view
             ((System.ComponentModel.ISupportInitialize)(this.pcbLivreImageCom)).BeginInit();
             this.tabCommandeDvd.SuspendLayout();
             this.grpModifCommandesDvd.SuspendLayout();
-            this.GrpAjoutCommandesRevue.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceptionCommandesListeDVD)).BeginInit();
             this.grpInfosCommandesDvd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDvdImageCom)).BeginInit();
@@ -853,7 +852,6 @@ namespace MediaTekDocuments.view
             // btnLivresSupprimer
             // 
             this.btnLivresSupprimer.Location = new System.Drawing.Point(313, 103);
-            this.btnLivresSupprimer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLivresSupprimer.Name = "btnLivresSupprimer";
             this.btnLivresSupprimer.Size = new System.Drawing.Size(96, 21);
             this.btnLivresSupprimer.TabIndex = 19;
@@ -864,7 +862,6 @@ namespace MediaTekDocuments.view
             // btnLivresAjouter
             // 
             this.btnLivresAjouter.Location = new System.Drawing.Point(9, 104);
-            this.btnLivresAjouter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLivresAjouter.Name = "btnLivresAjouter";
             this.btnLivresAjouter.Size = new System.Drawing.Size(96, 21);
             this.btnLivresAjouter.TabIndex = 18;
@@ -875,7 +872,6 @@ namespace MediaTekDocuments.view
             // btnLivresModifier
             // 
             this.btnLivresModifier.Location = new System.Drawing.Point(160, 104);
-            this.btnLivresModifier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLivresModifier.Name = "btnLivresModifier";
             this.btnLivresModifier.Size = new System.Drawing.Size(96, 21);
             this.btnLivresModifier.TabIndex = 17;
@@ -1443,7 +1439,6 @@ namespace MediaTekDocuments.view
             this.tabRevues.Controls.Add(this.grpRevuesRecherche);
             this.tabRevues.Location = new System.Drawing.Point(4, 22);
             this.tabRevues.Name = "tabRevues";
-            this.tabRevues.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabRevues.Size = new System.Drawing.Size(875, 642);
             this.tabRevues.TabIndex = 1;
             this.tabRevues.Text = "Revues";
@@ -2207,9 +2202,7 @@ namespace MediaTekDocuments.view
             this.tabCommandeLivre.Controls.Add(this.DgvReceptionCommandesListe);
             this.tabCommandeLivre.Controls.Add(this.grpLivresRechercheCom);
             this.tabCommandeLivre.Location = new System.Drawing.Point(4, 22);
-            this.tabCommandeLivre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabCommandeLivre.Name = "tabCommandeLivre";
-            this.tabCommandeLivre.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabCommandeLivre.Size = new System.Drawing.Size(875, 642);
             this.tabCommandeLivre.TabIndex = 5;
             this.tabCommandeLivre.Text = "Commande de Livre";
@@ -2233,9 +2226,7 @@ namespace MediaTekDocuments.view
             this.grpModifCommandes.Controls.Add(this.BtnModifCommande);
             this.grpModifCommandes.Controls.Add(this.label73);
             this.grpModifCommandes.Location = new System.Drawing.Point(331, 460);
-            this.grpModifCommandes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpModifCommandes.Name = "grpModifCommandes";
-            this.grpModifCommandes.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpModifCommandes.Size = new System.Drawing.Size(326, 172);
             this.grpModifCommandes.TabIndex = 41;
             this.grpModifCommandes.TabStop = false;
@@ -2246,7 +2237,6 @@ namespace MediaTekDocuments.view
             this.CbxNouvelleEtape.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxNouvelleEtape.FormattingEnabled = true;
             this.CbxNouvelleEtape.Location = new System.Drawing.Point(106, 24);
-            this.CbxNouvelleEtape.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CbxNouvelleEtape.Name = "CbxNouvelleEtape";
             this.CbxNouvelleEtape.Size = new System.Drawing.Size(140, 21);
             this.CbxNouvelleEtape.TabIndex = 37;
@@ -2286,9 +2276,7 @@ namespace MediaTekDocuments.view
             this.grpAjoutCommandes.Controls.Add(this.label71);
             this.grpAjoutCommandes.Controls.Add(this.label70);
             this.grpAjoutCommandes.Location = new System.Drawing.Point(5, 460);
-            this.grpAjoutCommandes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpAjoutCommandes.Name = "grpAjoutCommandes";
-            this.grpAjoutCommandes.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpAjoutCommandes.Size = new System.Drawing.Size(325, 172);
             this.grpAjoutCommandes.TabIndex = 40;
             this.grpAjoutCommandes.TabStop = false;
@@ -2638,13 +2626,10 @@ namespace MediaTekDocuments.view
             // 
             this.tabCommandeDvd.Controls.Add(this.BtnSupprCommandeDVD);
             this.tabCommandeDvd.Controls.Add(this.grpModifCommandesDvd);
-            this.tabCommandeDvd.Controls.Add(this.GrpAjoutCommandesRevue);
             this.tabCommandeDvd.Controls.Add(this.dgvReceptionCommandesListeDVD);
             this.tabCommandeDvd.Controls.Add(this.grpInfosCommandesDvd);
             this.tabCommandeDvd.Location = new System.Drawing.Point(4, 22);
-            this.tabCommandeDvd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabCommandeDvd.Name = "tabCommandeDvd";
-            this.tabCommandeDvd.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabCommandeDvd.Size = new System.Drawing.Size(875, 642);
             this.tabCommandeDvd.TabIndex = 6;
             this.tabCommandeDvd.Text = "Commande de Dvd";
@@ -2668,9 +2653,7 @@ namespace MediaTekDocuments.view
             this.grpModifCommandesDvd.Controls.Add(this.cbxNouvelleEtapeDVD);
             this.grpModifCommandesDvd.Controls.Add(this.label86);
             this.grpModifCommandesDvd.Location = new System.Drawing.Point(334, 487);
-            this.grpModifCommandesDvd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpModifCommandesDvd.Name = "grpModifCommandesDvd";
-            this.grpModifCommandesDvd.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpModifCommandesDvd.Size = new System.Drawing.Size(326, 151);
             this.grpModifCommandesDvd.TabIndex = 44;
             this.grpModifCommandesDvd.TabStop = false;
@@ -2691,7 +2674,6 @@ namespace MediaTekDocuments.view
             // 
             this.cbxNouvelleEtapeDVD.FormattingEnabled = true;
             this.cbxNouvelleEtapeDVD.Location = new System.Drawing.Point(102, 24);
-            this.cbxNouvelleEtapeDVD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxNouvelleEtapeDVD.Name = "cbxNouvelleEtapeDVD";
             this.cbxNouvelleEtapeDVD.Size = new System.Drawing.Size(140, 21);
             this.cbxNouvelleEtapeDVD.TabIndex = 12;
@@ -2707,27 +2689,7 @@ namespace MediaTekDocuments.view
             this.label86.TabIndex = 11;
             this.label86.Text = "Etape de suivi :";
             // 
-            // GrpAjoutCommandesRevue
             // 
-            this.GrpAjoutCommandesRevue.Controls.Add(this.txbNumDVDCom);
-            this.GrpAjoutCommandesRevue.Controls.Add(this.label87);
-            this.GrpAjoutCommandesRevue.Controls.Add(this.txbNumeroCommandeDVD);
-            this.GrpAjoutCommandesRevue.Controls.Add(this.label88);
-            this.GrpAjoutCommandesRevue.Controls.Add(this.dtpCommandeDateDVD);
-            this.GrpAjoutCommandesRevue.Controls.Add(this.txbMontantCommandeDVD);
-            this.GrpAjoutCommandesRevue.Controls.Add(this.txbNbExemplairesCommandeDVD);
-            this.GrpAjoutCommandesRevue.Controls.Add(this.btnAjoutCommandeDVD);
-            this.GrpAjoutCommandesRevue.Controls.Add(this.label89);
-            this.GrpAjoutCommandesRevue.Controls.Add(this.label90);
-            this.GrpAjoutCommandesRevue.Controls.Add(this.label91);
-            this.GrpAjoutCommandesRevue.Location = new System.Drawing.Point(9, 487);
-            this.GrpAjoutCommandesRevue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.GrpAjoutCommandesRevue.Name = "GrpAjoutCommandesRevue";
-            this.GrpAjoutCommandesRevue.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.GrpAjoutCommandesRevue.Size = new System.Drawing.Size(325, 151);
-            this.GrpAjoutCommandesRevue.TabIndex = 43;
-            this.GrpAjoutCommandesRevue.TabStop = false;
-            this.GrpAjoutCommandesRevue.Text = "Ajouter une commande";
             // 
             // txbNumDVDCom
             // 
@@ -3620,8 +3582,6 @@ namespace MediaTekDocuments.view
             this.tabCommandeDvd.ResumeLayout(false);
             this.grpModifCommandesDvd.ResumeLayout(false);
             this.grpModifCommandesDvd.PerformLayout();
-            this.GrpAjoutCommandesRevue.ResumeLayout(false);
-            this.GrpAjoutCommandesRevue.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceptionCommandesListeDVD)).EndInit();
             this.grpInfosCommandesDvd.ResumeLayout(false);
             this.grpInfosCommandesDvd.PerformLayout();
@@ -3860,7 +3820,6 @@ namespace MediaTekDocuments.view
         private System.Windows.Forms.Button BtnModifCommandeDVD;
         private System.Windows.Forms.ComboBox cbxNouvelleEtapeDVD;
         private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.GroupBox GrpAjoutCommandesRevue;
         private System.Windows.Forms.TextBox txbNumDVDCom;
         private System.Windows.Forms.Label label87;
         private System.Windows.Forms.TextBox txbNumeroCommandeDVD;
