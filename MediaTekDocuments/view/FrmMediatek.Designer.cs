@@ -4246,4 +4246,3 @@ namespace MediaTekDocuments.view
         private System.Windows.Forms.Label label120;
     }
 }
-
