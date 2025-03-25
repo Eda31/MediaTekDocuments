@@ -2,6 +2,7 @@
 using MediaTekDocuments.model;
 using MediaTekDocuments.dal;
 using System;
+>>>>>>>>> Temporary merge branch 2
 
 namespace MediaTekDocuments.controller
 {
@@ -186,7 +187,6 @@ namespace MediaTekDocuments.controller
         {
             return access.GetCommandesDvd(idDocuement);
         }
-
         /// <summary>
         /// récupère les commandes d'un dvd
         /// </summary>
@@ -248,5 +248,6 @@ namespace MediaTekDocuments.controller
             return access.GetAbonnementsExpirantDans30Jours();
         }
 
+>>>>>>>>> Temporary merge branch 2
     }
 }

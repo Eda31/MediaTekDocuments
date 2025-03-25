@@ -331,6 +331,17 @@ namespace MediaTekDocuments.view
             this.label108 = new System.Windows.Forms.Label();
             this.label109 = new System.Windows.Forms.Label();
             this.label110 = new System.Windows.Forms.Label();
+            this.DtpCommandeDateFinRevue = new System.Windows.Forms.DateTimePicker();
+            this.label120 = new System.Windows.Forms.Label();
+            this.label119 = new System.Windows.Forms.Label();
+            this.label118 = new System.Windows.Forms.Label();
+            this.DtpCommandeDateFinRevueModifier = new System.Windows.Forms.DateTimePicker();
+            this.TxbMontantCommandeRevueModifier = new System.Windows.Forms.TextBox();
+            this.DtpCommandeDateRevueModifier = new System.Windows.Forms.DateTimePicker();
+            this.label117 = new System.Windows.Forms.Label();
+            this.label111 = new System.Windows.Forms.Label();
+            this.TxbNumRevueComModifier = new System.Windows.Forms.TextBox();
+            this.TxbNumComRevueModifier = new System.Windows.Forms.TextBox();
             this.tabOngletsApplication.SuspendLayout();
             this.tabLivres.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -2386,10 +2397,16 @@ namespace MediaTekDocuments.view
             this.tabCommandeLivre.Controls.Add(this.DgvReceptionCommandesListe);
             this.tabCommandeLivre.Controls.Add(this.grpLivresRechercheCom);
             this.tabCommandeLivre.Location = new System.Drawing.Point(4, 22);
-            this.tabCommandeLivre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+<<<<<<<<< Temporary merge branch 1
+            this.tabCommandeLivre.Margin = new System.Windows.Forms.Padding(2);
             this.tabCommandeLivre.Name = "tabCommandeLivre";
-            this.tabCommandeLivre.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabCommandeLivre.Size = new System.Drawing.Size(1169, 796);
+            this.tabCommandeLivre.Padding = new System.Windows.Forms.Padding(2);
+=========
+            this.tabCommandeLivre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabCommandeLivre.Name = "tabCommandeLivre";
+            this.tabCommandeLivre.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>>>> Temporary merge branch 2
+            this.tabCommandeLivre.Size = new System.Drawing.Size(875, 642);
             this.tabCommandeLivre.TabIndex = 5;
             this.tabCommandeLivre.Text = "Commande de Livre";
             this.tabCommandeLivre.UseVisualStyleBackColor = true;
@@ -2412,11 +2429,17 @@ namespace MediaTekDocuments.view
             this.grpModifCommandes.Controls.Add(this.CbxNouvelleEtape);
             this.grpModifCommandes.Controls.Add(this.BtnModifCommande);
             this.grpModifCommandes.Controls.Add(this.label73);
-            this.grpModifCommandes.Location = new System.Drawing.Point(441, 566);
-            this.grpModifCommandes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpModifCommandes.Location = new System.Drawing.Point(331, 460);
+<<<<<<<<< Temporary merge branch 1
+            this.grpModifCommandes.Margin = new System.Windows.Forms.Padding(2);
             this.grpModifCommandes.Name = "grpModifCommandes";
-            this.grpModifCommandes.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpModifCommandes.Size = new System.Drawing.Size(435, 212);
+            this.grpModifCommandes.Padding = new System.Windows.Forms.Padding(2);
+=========
+            this.grpModifCommandes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpModifCommandes.Name = "grpModifCommandes";
+            this.grpModifCommandes.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>>>> Temporary merge branch 2
+            this.grpModifCommandes.Size = new System.Drawing.Size(326, 172);
             this.grpModifCommandes.TabIndex = 41;
             this.grpModifCommandes.TabStop = false;
             this.grpModifCommandes.Text = "Modifier l\'etape du suivi d\'une commande";
@@ -2425,8 +2448,12 @@ namespace MediaTekDocuments.view
             // 
             this.CbxNouvelleEtape.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxNouvelleEtape.FormattingEnabled = true;
-            this.CbxNouvelleEtape.Location = new System.Drawing.Point(141, 30);
-            this.CbxNouvelleEtape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxNouvelleEtape.Location = new System.Drawing.Point(106, 24);
+<<<<<<<<< Temporary merge branch 1
+            this.CbxNouvelleEtape.Margin = new System.Windows.Forms.Padding(2);
+=========
+            this.CbxNouvelleEtape.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>>>> Temporary merge branch 2
             this.CbxNouvelleEtape.Name = "CbxNouvelleEtape";
             this.CbxNouvelleEtape.Size = new System.Drawing.Size(185, 24);
             this.CbxNouvelleEtape.TabIndex = 37;
@@ -2467,11 +2494,17 @@ namespace MediaTekDocuments.view
             this.grpAjoutCommandes.Controls.Add(this.label72);
             this.grpAjoutCommandes.Controls.Add(this.label71);
             this.grpAjoutCommandes.Controls.Add(this.label70);
-            this.grpAjoutCommandes.Location = new System.Drawing.Point(7, 566);
-            this.grpAjoutCommandes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpAjoutCommandes.Location = new System.Drawing.Point(5, 460);
+<<<<<<<<< Temporary merge branch 1
+            this.grpAjoutCommandes.Margin = new System.Windows.Forms.Padding(2);
             this.grpAjoutCommandes.Name = "grpAjoutCommandes";
-            this.grpAjoutCommandes.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpAjoutCommandes.Size = new System.Drawing.Size(433, 212);
+            this.grpAjoutCommandes.Padding = new System.Windows.Forms.Padding(2);
+=========
+            this.grpAjoutCommandes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAjoutCommandes.Name = "grpAjoutCommandes";
+            this.grpAjoutCommandes.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>>>> Temporary merge branch 2
+            this.grpAjoutCommandes.Size = new System.Drawing.Size(325, 172);
             this.grpAjoutCommandes.TabIndex = 40;
             this.grpAjoutCommandes.TabStop = false;
             this.grpAjoutCommandes.Text = "Ajouter une commande";
@@ -2855,14 +2888,24 @@ namespace MediaTekDocuments.view
             // 
             this.tabCommandeDvd.Controls.Add(this.BtnSupprCommandeDVD);
             this.tabCommandeDvd.Controls.Add(this.grpModifCommandesDvd);
-            this.tabCommandeDvd.Controls.Add(this.GrpAjoutCommandesDVD);
+<<<<<<<<< Temporary merge branch 1
+            this.tabCommandeDvd.Controls.Add(this.grpAjoutCommandesDvd);
             this.tabCommandeDvd.Controls.Add(this.dgvReceptionCommandesListeDVD);
             this.tabCommandeDvd.Controls.Add(this.grpInfosCommandesDvd);
             this.tabCommandeDvd.Location = new System.Drawing.Point(4, 22);
-            this.tabCommandeDvd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabCommandeDvd.Margin = new System.Windows.Forms.Padding(2);
             this.tabCommandeDvd.Name = "tabCommandeDvd";
-            this.tabCommandeDvd.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabCommandeDvd.Size = new System.Drawing.Size(1169, 796);
+            this.tabCommandeDvd.Padding = new System.Windows.Forms.Padding(2);
+=========
+            this.tabCommandeDvd.Controls.Add(this.GrpAjoutCommandesRevue);
+            this.tabCommandeDvd.Controls.Add(this.dgvReceptionCommandesListeDVD);
+            this.tabCommandeDvd.Controls.Add(this.grpInfosCommandesDvd);
+            this.tabCommandeDvd.Location = new System.Drawing.Point(4, 22);
+            this.tabCommandeDvd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabCommandeDvd.Name = "tabCommandeDvd";
+            this.tabCommandeDvd.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>>>> Temporary merge branch 2
+            this.tabCommandeDvd.Size = new System.Drawing.Size(875, 642);
             this.tabCommandeDvd.TabIndex = 6;
             this.tabCommandeDvd.Text = "Commande de Dvd";
             this.tabCommandeDvd.UseVisualStyleBackColor = true;
@@ -2885,11 +2928,17 @@ namespace MediaTekDocuments.view
             this.grpModifCommandesDvd.Controls.Add(this.BtnModifCommandeDVD);
             this.grpModifCommandesDvd.Controls.Add(this.cbxNouvelleEtapeDVD);
             this.grpModifCommandesDvd.Controls.Add(this.label86);
-            this.grpModifCommandesDvd.Location = new System.Drawing.Point(445, 599);
-            this.grpModifCommandesDvd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpModifCommandesDvd.Location = new System.Drawing.Point(334, 487);
+<<<<<<<<< Temporary merge branch 1
+            this.grpModifCommandesDvd.Margin = new System.Windows.Forms.Padding(2);
             this.grpModifCommandesDvd.Name = "grpModifCommandesDvd";
-            this.grpModifCommandesDvd.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpModifCommandesDvd.Size = new System.Drawing.Size(435, 186);
+            this.grpModifCommandesDvd.Padding = new System.Windows.Forms.Padding(2);
+=========
+            this.grpModifCommandesDvd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpModifCommandesDvd.Name = "grpModifCommandesDvd";
+            this.grpModifCommandesDvd.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>>>> Temporary merge branch 2
+            this.grpModifCommandesDvd.Size = new System.Drawing.Size(326, 151);
             this.grpModifCommandesDvd.TabIndex = 44;
             this.grpModifCommandesDvd.TabStop = false;
             this.grpModifCommandesDvd.Text = "Modifier l\'etape du suivi d\'une commande";
@@ -2909,8 +2958,12 @@ namespace MediaTekDocuments.view
             // cbxNouvelleEtapeDVD
             // 
             this.cbxNouvelleEtapeDVD.FormattingEnabled = true;
-            this.cbxNouvelleEtapeDVD.Location = new System.Drawing.Point(136, 30);
-            this.cbxNouvelleEtapeDVD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxNouvelleEtapeDVD.Location = new System.Drawing.Point(102, 24);
+<<<<<<<<< Temporary merge branch 1
+            this.cbxNouvelleEtapeDVD.Margin = new System.Windows.Forms.Padding(2);
+=========
+            this.cbxNouvelleEtapeDVD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>>>> Temporary merge branch 2
             this.cbxNouvelleEtapeDVD.Name = "cbxNouvelleEtapeDVD";
             this.cbxNouvelleEtapeDVD.Size = new System.Drawing.Size(185, 24);
             this.cbxNouvelleEtapeDVD.TabIndex = 12;
@@ -2927,27 +2980,51 @@ namespace MediaTekDocuments.view
             this.label86.TabIndex = 11;
             this.label86.Text = "Etape de suivi :";
             // 
-            // GrpAjoutCommandesDVD
+<<<<<<<<< Temporary merge branch 1
+            // grpAjoutCommandesDvd
             // 
-            this.GrpAjoutCommandesDVD.Controls.Add(this.txbNumDVDCom);
-            this.GrpAjoutCommandesDVD.Controls.Add(this.label87);
-            this.GrpAjoutCommandesDVD.Controls.Add(this.txbNumeroCommandeDVD);
-            this.GrpAjoutCommandesDVD.Controls.Add(this.label88);
-            this.GrpAjoutCommandesDVD.Controls.Add(this.dtpCommandeDateDVD);
-            this.GrpAjoutCommandesDVD.Controls.Add(this.txbMontantCommandeDVD);
-            this.GrpAjoutCommandesDVD.Controls.Add(this.txbNbExemplairesCommandeDVD);
-            this.GrpAjoutCommandesDVD.Controls.Add(this.btnAjoutCommandeDVD);
-            this.GrpAjoutCommandesDVD.Controls.Add(this.label89);
-            this.GrpAjoutCommandesDVD.Controls.Add(this.label90);
-            this.GrpAjoutCommandesDVD.Controls.Add(this.label91);
-            this.GrpAjoutCommandesDVD.Location = new System.Drawing.Point(12, 599);
-            this.GrpAjoutCommandesDVD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.GrpAjoutCommandesDVD.Name = "GrpAjoutCommandesDVD";
-            this.GrpAjoutCommandesDVD.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.GrpAjoutCommandesDVD.Size = new System.Drawing.Size(433, 186);
-            this.GrpAjoutCommandesDVD.TabIndex = 43;
-            this.GrpAjoutCommandesDVD.TabStop = false;
-            this.GrpAjoutCommandesDVD.Text = "Ajouter une commande";
+            this.grpAjoutCommandesDvd.Controls.Add(this.txbNumDVDCom);
+            this.grpAjoutCommandesDvd.Controls.Add(this.label87);
+            this.grpAjoutCommandesDvd.Controls.Add(this.txbNumeroCommandeDVD);
+            this.grpAjoutCommandesDvd.Controls.Add(this.label88);
+            this.grpAjoutCommandesDvd.Controls.Add(this.dtpCommandeDateDVD);
+            this.grpAjoutCommandesDvd.Controls.Add(this.txbMontantCommandeDVD);
+            this.grpAjoutCommandesDvd.Controls.Add(this.txbNbExemplairesCommandeDVD);
+            this.grpAjoutCommandesDvd.Controls.Add(this.btnAjoutCommandeDVD);
+            this.grpAjoutCommandesDvd.Controls.Add(this.label89);
+            this.grpAjoutCommandesDvd.Controls.Add(this.label90);
+            this.grpAjoutCommandesDvd.Controls.Add(this.label91);
+            this.grpAjoutCommandesDvd.Location = new System.Drawing.Point(9, 487);
+            this.grpAjoutCommandesDvd.Margin = new System.Windows.Forms.Padding(2);
+            this.grpAjoutCommandesDvd.Name = "grpAjoutCommandesDvd";
+            this.grpAjoutCommandesDvd.Padding = new System.Windows.Forms.Padding(2);
+            this.grpAjoutCommandesDvd.Size = new System.Drawing.Size(325, 151);
+            this.grpAjoutCommandesDvd.TabIndex = 43;
+            this.grpAjoutCommandesDvd.TabStop = false;
+            this.grpAjoutCommandesDvd.Text = "Ajouter une commande";
+=========
+            // GrpAjoutCommandesRevue
+            // 
+            this.GrpAjoutCommandesRevue.Controls.Add(this.txbNumDVDCom);
+            this.GrpAjoutCommandesRevue.Controls.Add(this.label87);
+            this.GrpAjoutCommandesRevue.Controls.Add(this.txbNumeroCommandeDVD);
+            this.GrpAjoutCommandesRevue.Controls.Add(this.label88);
+            this.GrpAjoutCommandesRevue.Controls.Add(this.dtpCommandeDateDVD);
+            this.GrpAjoutCommandesRevue.Controls.Add(this.txbMontantCommandeDVD);
+            this.GrpAjoutCommandesRevue.Controls.Add(this.txbNbExemplairesCommandeDVD);
+            this.GrpAjoutCommandesRevue.Controls.Add(this.btnAjoutCommandeDVD);
+            this.GrpAjoutCommandesRevue.Controls.Add(this.label89);
+            this.GrpAjoutCommandesRevue.Controls.Add(this.label90);
+            this.GrpAjoutCommandesRevue.Controls.Add(this.label91);
+            this.GrpAjoutCommandesRevue.Location = new System.Drawing.Point(9, 487);
+            this.GrpAjoutCommandesRevue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GrpAjoutCommandesRevue.Name = "GrpAjoutCommandesRevue";
+            this.GrpAjoutCommandesRevue.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GrpAjoutCommandesRevue.Size = new System.Drawing.Size(325, 151);
+            this.GrpAjoutCommandesRevue.TabIndex = 43;
+            this.GrpAjoutCommandesRevue.TabStop = false;
+            this.GrpAjoutCommandesRevue.Text = "Ajouter une commande";
+>>>>>>>>> Temporary merge branch 2
             // 
             // txbNumDVDCom
             // 
@@ -3866,6 +3943,104 @@ namespace MediaTekDocuments.view
             this.label110.TabIndex = 10;
             this.label110.Text = "Délai mise à dispo :";
             // 
+            // DtpCommandeDateFinRevue
+            // 
+            this.DtpCommandeDateFinRevue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpCommandeDateFinRevue.Location = new System.Drawing.Point(165, 98);
+            this.DtpCommandeDateFinRevue.Name = "DtpCommandeDateFinRevue";
+            this.DtpCommandeDateFinRevue.Size = new System.Drawing.Size(155, 20);
+            this.DtpCommandeDateFinRevue.TabIndex = 45;
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label120.Location = new System.Drawing.Point(2, 44);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(124, 13);
+            this.label120.TabIndex = 46;
+            this.label120.Text = "Date de commande :";
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label119.Location = new System.Drawing.Point(2, 67);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(61, 13);
+            this.label119.TabIndex = 47;
+            this.label119.Text = "Montant :";
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label118.Location = new System.Drawing.Point(1, 93);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(161, 13);
+            this.label118.TabIndex = 48;
+            this.label118.Text = "Date de fin d\'abonnement :";
+            // 
+            // DtpCommandeDateFinRevueModifier
+            // 
+            this.DtpCommandeDateFinRevueModifier.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpCommandeDateFinRevueModifier.Location = new System.Drawing.Point(165, 91);
+            this.DtpCommandeDateFinRevueModifier.Name = "DtpCommandeDateFinRevueModifier";
+            this.DtpCommandeDateFinRevueModifier.Size = new System.Drawing.Size(155, 20);
+            this.DtpCommandeDateFinRevueModifier.TabIndex = 56;
+            // 
+            // TxbMontantCommandeRevueModifier
+            // 
+            this.TxbMontantCommandeRevueModifier.Location = new System.Drawing.Point(165, 64);
+            this.TxbMontantCommandeRevueModifier.Name = "TxbMontantCommandeRevueModifier";
+            this.TxbMontantCommandeRevueModifier.Size = new System.Drawing.Size(155, 20);
+            this.TxbMontantCommandeRevueModifier.TabIndex = 50;
+            // 
+            // DtpCommandeDateRevueModifier
+            // 
+            this.DtpCommandeDateRevueModifier.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpCommandeDateRevueModifier.Location = new System.Drawing.Point(165, 38);
+            this.DtpCommandeDateRevueModifier.Name = "DtpCommandeDateRevueModifier";
+            this.DtpCommandeDateRevueModifier.Size = new System.Drawing.Size(155, 20);
+            this.DtpCommandeDateRevueModifier.TabIndex = 51;
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label117.Location = new System.Drawing.Point(2, 15);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(140, 13);
+            this.label117.TabIndex = 52;
+            this.label117.Text = "Numéro de commande :";
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label111.Location = new System.Drawing.Point(1, 119);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(112, 13);
+            this.label111.TabIndex = 54;
+            this.label111.Text = "Numéro de revue :";
+            // 
+            // TxbNumRevueComModifier
+            // 
+            this.TxbNumRevueComModifier.Location = new System.Drawing.Point(150, 117);
+            this.TxbNumRevueComModifier.Name = "TxbNumRevueComModifier";
+            this.TxbNumRevueComModifier.ReadOnly = true;
+            this.TxbNumRevueComModifier.Size = new System.Drawing.Size(72, 20);
+            this.TxbNumRevueComModifier.TabIndex = 55;
+            // 
+            // TxbNumComRevueModifier
+            // 
+            this.TxbNumComRevueModifier.Location = new System.Drawing.Point(165, 12);
+            this.TxbNumComRevueModifier.Name = "TxbNumComRevueModifier";
+            this.TxbNumComRevueModifier.ReadOnly = true;
+            this.TxbNumComRevueModifier.Size = new System.Drawing.Size(155, 20);
+            this.TxbNumComRevueModifier.TabIndex = 50;
+            // 
+>>>>>>>>> Temporary merge branch 2
             // FrmMediatek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3921,8 +4096,13 @@ namespace MediaTekDocuments.view
             this.tabCommandeDvd.ResumeLayout(false);
             this.grpModifCommandesDvd.ResumeLayout(false);
             this.grpModifCommandesDvd.PerformLayout();
-            this.GrpAjoutCommandesDVD.ResumeLayout(false);
-            this.GrpAjoutCommandesDVD.PerformLayout();
+<<<<<<<<< Temporary merge branch 1
+            this.grpAjoutCommandesDvd.ResumeLayout(false);
+            this.grpAjoutCommandesDvd.PerformLayout();
+=========
+            this.GrpAjoutCommandesRevue.ResumeLayout(false);
+            this.GrpAjoutCommandesRevue.PerformLayout();
+>>>>>>>>> Temporary merge branch 2
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceptionCommandesListeDVD)).EndInit();
             this.grpInfosCommandesDvd.ResumeLayout(false);
             this.grpInfosCommandesDvd.PerformLayout();
@@ -4161,7 +4341,11 @@ namespace MediaTekDocuments.view
         private System.Windows.Forms.Button BtnModifCommandeDVD;
         private System.Windows.Forms.ComboBox cbxNouvelleEtapeDVD;
         private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.GroupBox GrpAjoutCommandesDVD;
+<<<<<<<<< Temporary merge branch 1
+        private System.Windows.Forms.GroupBox grpAjoutCommandesDvd;
+=========
+        private System.Windows.Forms.GroupBox GrpAjoutCommandesRevue;
+>>>>>>>>> Temporary merge branch 2
         private System.Windows.Forms.TextBox txbNumDVDCom;
         private System.Windows.Forms.Label label87;
         private System.Windows.Forms.TextBox txbNumeroCommandeDVD;
