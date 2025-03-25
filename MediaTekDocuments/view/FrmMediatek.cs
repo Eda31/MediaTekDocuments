@@ -25,13 +25,17 @@ namespace MediaTekDocuments.view
         private readonly BindingSource bdgPublicsAjout = new BindingSource();
         private readonly BindingSource bdgRayonsAjout = new BindingSource();
 
+        private readonly Utilisateur utilisateur;
+
         /// <summary>
         /// Constructeur : création du contrôleur lié à ce formulaire
         /// </summary>
-        internal FrmMediatek()
+        internal FrmMediatek(Utilisateur utilisateur)
         {
             InitializeComponent();
             this.controller = new FrmMediatekController();
+            this.utilisateur = utilisateur;
+            this.GererAccesParService();
         }
 
         /// <summary>
@@ -496,7 +500,7 @@ namespace MediaTekDocuments.view
             }
             */
         }
-
+         
 
         #endregion
 
@@ -2125,7 +2129,7 @@ namespace MediaTekDocuments.view
         /// <param name="acces">true ou false</param>
         private void AccesReceptionCommandeGroupBoxRevue(bool acces)
         {
-            GrpAjoutCommandesDVD.Enabled = acces;
+            GrpAjoutCommandesRevue.Enabled = acces;
             TxbNumeroCommandeRevue.Text = "";
             DtpCommandeDateRevue.Value = DateTime.Now;
             TxbMontantCommandeRevue.Text = "";
@@ -2337,6 +2341,32 @@ namespace MediaTekDocuments.view
             else
             {
                 MessageBox.Show("Erreur lors de la suppression de la commande.", "Erreur");
+            }
+        }
+
+        #endregion
+
+        #region FrmAuthentification
+        /// <summary>
+        /// Gere l'acces par rapport au service
+        /// </summary>
+        private void GererAccesParService()
+        {
+            switch (utilisateur.Service)
+            {
+                case "Administratif":
+                    break; // tout visible
+
+                case "Bibliothécaire":
+                    tabOngletsApplication.TabPages.Remove(tabCommandeLivre);
+                    tabOngletsApplication.TabPages.Remove(tabCommandeDvd);
+                    tabOngletsApplication.TabPages.Remove(TabCommandeRevue);
+                    break;
+
+                default:
+                    MessageBox.Show("Votre service ne permet pas d'accéder à cette application.", "Accès refusé", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Application.Exit();
+                    break;
             }
         }
 

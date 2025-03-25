@@ -3,6 +3,7 @@ using MediaTekDocuments.model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
+using Org.BouncyCastle.Crypto.Generators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -202,6 +203,7 @@ namespace MediaTekDocuments.dal
             }
             catch (Exception e)
             {
+                Console.WriteLine("Erreur lors de l'accès à l'API : " + e.Message);
                 Environment.Exit(0);
             }
             return liste;
@@ -605,6 +607,26 @@ namespace MediaTekDocuments.dal
             }
             return abonnements;
         }
+
+        /// <summary>
+        /// Authentifier un utilisateur
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="motDePasse"></param>
+        /// <returns></returns>
+        public Utilisateur AuthentifierUtilisateur(string login, string motDePasse)
+        {
+            string json = ConvertToJson("login", login);
+            List<Utilisateur> utilisateurs = TraitementRecup<Utilisateur>(GET, "utilisateur/" + json, null);
+
+            if (utilisateurs != null && utilisateurs.Count > 0)
+            {
+                Utilisateur utilisateur = utilisateurs[0];
+                return utilisateur;
+            }
+            return null;
+        }
+
 
     }
 }

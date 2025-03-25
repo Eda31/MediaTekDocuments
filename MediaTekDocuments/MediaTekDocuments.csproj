@@ -175,12 +175,19 @@
     <Compile Include="model\Commande.cs" />
     <Compile Include="model\CommandeDocument.cs" />
     <Compile Include="model\Suivi.cs" />
+    <Compile Include="model\Utilisateur.cs" />
     <Compile Include="test\ParutionDansAbonnementTests.cs" />
     <Compile Include="view\FrmAlerte.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="view\FrmAlerte.Designer.cs">
       <DependentUpon>FrmAlerte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmAuthentification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmAuthentification.Designer.cs">
+      <DependentUpon>FrmAuthentification.cs</DependentUpon>
     </Compile>
     <Compile Include="view\FrmMediatek.cs">
       <SubType>Form</SubType>
@@ -212,6 +219,9 @@
     </Compile>
     <EmbeddedResource Include="view\FrmAlerte.resx">
       <DependentUpon>FrmAlerte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmAuthentification.resx">
+      <DependentUpon>FrmAuthentification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FrmMediatek.resx">
       <DependentUpon>FrmMediatek.cs</DependentUpon>

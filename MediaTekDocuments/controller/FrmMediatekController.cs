@@ -247,5 +247,16 @@ namespace MediaTekDocuments.controller
             return access.GetAbonnementsExpirantDans30Jours();
         }
 
+        /// <summary>
+        /// Authentifie un utilisateur
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="motDePasse"></param>
+        /// <returns></returns>
+        public Utilisateur AuthentifierUtilisateur(string login, string motDePasse)
+        {
+            return access.AuthentifierUtilisateur(login, motDePasse);
+        }
+
     }
 }
