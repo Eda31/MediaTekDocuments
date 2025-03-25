@@ -2,7 +2,6 @@
 using MediaTekDocuments.model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -370,7 +369,7 @@ namespace MediaTekDocuments.view
             }
             RemplirLivresListe(sortedList);
         }
-        
+
         /// <summary>
         /// Suppression d'un livre
         /// </summary>
@@ -497,7 +496,7 @@ namespace MediaTekDocuments.view
             }
             */
         }
-         
+
 
         #endregion
 
@@ -1820,7 +1819,7 @@ namespace MediaTekDocuments.view
         /// <param name="acces">true ou false</param>
         private void AccesReceptionCommandeGroupBoxDvd(bool acces)
         {
-            GrpAjoutCommandesRevue.Enabled = acces;
+            GrpAjoutCommandesDVD.Enabled = acces;
             txbNumeroCommandeDVD.Text = "";
             dtpCommandeDateDVD.Value = DateTime.Now;
             txbMontantCommandeDVD.Text = "";
@@ -2029,7 +2028,6 @@ namespace MediaTekDocuments.view
             }
         }
 
-
         #endregion
 
         #region Onglet Commandes Revue
@@ -2127,7 +2125,7 @@ namespace MediaTekDocuments.view
         /// <param name="acces">true ou false</param>
         private void AccesReceptionCommandeGroupBoxRevue(bool acces)
         {
-            GrpAjoutCommandesRevue.Enabled = acces;
+            GrpAjoutCommandesDVD.Enabled = acces;
             TxbNumeroCommandeRevue.Text = "";
             DtpCommandeDateRevue.Value = DateTime.Now;
             TxbMontantCommandeRevue.Text = "";
@@ -2343,7 +2341,6 @@ namespace MediaTekDocuments.view
         }
 
         #endregion
-
 
     }
 }

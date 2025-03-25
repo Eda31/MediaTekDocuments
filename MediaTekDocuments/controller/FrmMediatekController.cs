@@ -2,7 +2,6 @@
 using MediaTekDocuments.model;
 using MediaTekDocuments.dal;
 using System;
-using System.Linq;
 
 namespace MediaTekDocuments.controller
 {

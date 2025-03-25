@@ -68,7 +68,7 @@ namespace MediaTekDocuments.dal
         /// <returns>instance unique de la classe</returns>
         public static Access GetInstance()
         {
-            if(instance == null)
+            if (instance == null)
             {
                 instance = new Access();
             }
@@ -176,7 +176,7 @@ namespace MediaTekDocuments.dal
         /// <param name="message">information envoyée dans l'url</param>
         /// <param name="parametres">paramètres à envoyer dans le body, au format "chp1=val1&chp2=val2&..."</param>
         /// <returns>liste d'objets récupérés (ou liste vide)</returns>
-        private List<T> TraitementRecup<T> (String methode, String message, String parametres)
+        private List<T> TraitementRecup<T>(String methode, String message, String parametres)
         {
             // trans
             List<T> liste = new List<T>();
@@ -199,9 +199,10 @@ namespace MediaTekDocuments.dal
                 {
                     Console.WriteLine("code erreur = " + code + " message = " + (String)retour["message"]);
                 }
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
-                Console.WriteLine("Erreur lors de l'accès à l'API : "+e.Message);
+                Console.WriteLine("Erreur lors de l'accès à l'API : " + e.Message);
                 Environment.Exit(0);
             }
             return liste;
@@ -431,7 +432,7 @@ namespace MediaTekDocuments.dal
             try
             {
                 // Envoyer le JSON dans le CORPS de la requête (comme pour ModifierCommande)
-                JObject jsonResponse = api.RecupDistant(DELETE, "commande/"+ jsonId, null);
+                JObject jsonResponse = api.RecupDistant(DELETE, "commande/" + jsonId, null);
                 if (jsonResponse == null)
                 {
                     Console.WriteLine("Réponse API null, suppression échouée.");
