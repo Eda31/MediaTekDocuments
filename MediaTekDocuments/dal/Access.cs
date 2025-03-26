@@ -3,9 +3,9 @@ using MediaTekDocuments.model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using Org.BouncyCastle.Crypto.Generators;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 
 namespace MediaTekDocuments.dal
@@ -53,7 +53,11 @@ namespace MediaTekDocuments.dal
             String authenticationString;
             try
             {
-                authenticationString = "admin:adminpwd";
+                authenticationString = ConfigurationManager.AppSettings["auth"];
+                if (authenticationString == null)
+                {
+                    throw new ConfigurationErrorsException("Clé 'auth' introuvable dans App.config");
+                }
                 api = ApiRest.GetInstance(uriApi, authenticationString);
             }
             catch (Exception e)
