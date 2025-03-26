@@ -3,6 +3,7 @@ using MediaTekDocuments.model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -53,16 +54,23 @@ namespace MediaTekDocuments.dal
             String authenticationString;
             try
             {
+                Log.Logger = new LoggerConfiguration()
+                    .MinimumLevel.Verbose()
+                    .WriteTo.Console()
+                    .WriteTo.File("logs/log.txt")
+                    .CreateLogger();
                 authenticationString = ConfigurationManager.AppSettings["auth"];
                 if (authenticationString == null)
                 {
+                    Log.Error("Clé 'auth' introuvable dans App.config");
                     throw new ConfigurationErrorsException("Clé 'auth' introuvable dans App.config");
                 }
                 api = ApiRest.GetInstance(uriApi, authenticationString);
+                Log.Information("Connexion à l'API initialisée");
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Log.Fatal(e, "Erreur critique lors de l'initialisation de l'accès API");
                 Environment.Exit(0);
             }
         }
@@ -382,19 +390,20 @@ namespace MediaTekDocuments.dal
                 JObject jsonResponse = api.RecupDistant(POST, "commande", "champs=" + jsonCommande);
                 if (jsonResponse != null && (int)jsonResponse["code"] == 200)
                 {
+                    Log.Information("Commande créée : {0}", jsonCommande);
                     return true;
                 }
                 else
                 {
-                    Console.WriteLine("Erreur lors de l'ajout d'une commande : " + (string)jsonResponse["message"]);
+                    Log.Warning("Erreur lors de l'ajout d'une commande : {0}", (string)jsonResponse["message"]);
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Log.Fatal("CreerCommande catch commande={0} erreur={1}", jsonCommande, ex.Message);
+                return false;
             }
-            return false;
         }
 
         /// <summary>
@@ -420,6 +429,7 @@ namespace MediaTekDocuments.dal
             }
             catch (Exception ex)
             {
+                Log.Fatal("Access.ModifierCommande catch jsonCommande={0} erreur={1}", jsonCommande, ex.Message);
                 Console.WriteLine("Erreur lors de l'accès à l'API : " + ex.Message);
             }
             return false;
@@ -455,6 +465,7 @@ namespace MediaTekDocuments.dal
             }
             catch (Exception ex)
             {
+                Log.Fatal("Access.SupprimerCommande catch jsonId={0} erreur={1}", jsonId, ex.Message);
                 Console.WriteLine("Exception attrapée : " + ex.Message);
                 return false;
             }
@@ -507,6 +518,7 @@ namespace MediaTekDocuments.dal
             }
             catch (Exception ex)
             {
+                Log.Fatal("Access.CreerAbonnement catch jsonCommande={0} erreur={1}", jsonCommande, ex.Message);
                 Console.WriteLine(ex.Message);
             }
             return false;
@@ -535,6 +547,7 @@ namespace MediaTekDocuments.dal
             }
             catch (Exception ex)
             {
+                Log.Fatal("Access.ModifierAbonnement catch jsonAbonnement={0} erreur={1}", jsonAbonnement, ex.Message);
                 Console.WriteLine("Erreur lors de l'accès à l'API : " + ex.Message);
             }
             return false;
@@ -547,29 +560,29 @@ namespace MediaTekDocuments.dal
         /// <returns></returns>
         public bool SupprimerAbonnement(string id)
         {
-            // S'assurer que l'ID est bien structuré sous forme de JSON
             string jsonId = ConvertToJson("Id", id);
             try
             {
-                // Envoyer le JSON dans le CORPS de la requête (comme pour ModifierCommande)
                 JObject jsonResponse = api.RecupDistant(DELETE, "abonnement/" + jsonId, null);
                 if (jsonResponse == null)
                 {
-                    Console.WriteLine("Réponse API null, suppression échouée.");
+                    Log.Warning("SupprimerAbonnement échec : réponse API null pour id={0}", id);
                     return false;
                 }
                 if ((int)jsonResponse["code"] == 200)
                 {
+                    Log.Information("Abonnement supprimé : id={0}", id);
                     return true;
                 }
                 else
                 {
-                    Console.WriteLine("Erreur lors de la suppression : " + (string)jsonResponse["message"]);
+                    Log.Warning("Erreur suppression abonnement : id={0} message={1}", id, (string)jsonResponse["message"]);
                     return false;
                 }
             }
             catch (Exception ex)
             {
+                Log.Fatal("Access.SupprimerAbonnement catch jsonId={0} erreur={1}", jsonId, ex.Message);
                 Console.WriteLine("Exception attrapée : " + ex.Message);
                 return false;
             }
@@ -606,7 +619,7 @@ namespace MediaTekDocuments.dal
                 }
                 else
                 {
-                    Console.WriteLine($"⚠️ Aucune revue trouvée pour l'IdRevue {abonnement.IdRevue}");
+                    Console.WriteLine($"Aucune revue trouvée pour l'IdRevue {abonnement.IdRevue}");
                 }
             }
             return abonnements;
@@ -620,13 +633,19 @@ namespace MediaTekDocuments.dal
         /// <returns></returns>
         public Utilisateur AuthentifierUtilisateur(string login, string motDePasse)
         {
-            string json = ConvertToJson("login", login);
-            List<Utilisateur> utilisateurs = TraitementRecup<Utilisateur>(GET, "utilisateur/" + json, null);
-
-            if (utilisateurs != null && utilisateurs.Count > 0)
+            try
             {
-                Utilisateur utilisateur = utilisateurs[0];
-                return utilisateur;
+                string json = ConvertToJson("login", login);
+                List<Utilisateur> utilisateurs = TraitementRecup<Utilisateur>(GET, "utilisateur/" + json, null);
+                if (utilisateurs != null && utilisateurs.Count > 0)
+                {
+                    Utilisateur utilisateur = utilisateurs[0];
+                    return utilisateur;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal("Access.AuthentifierUtilisateur catch login={0} erreur={1}", login, ex.Message);
             }
             return null;
         }

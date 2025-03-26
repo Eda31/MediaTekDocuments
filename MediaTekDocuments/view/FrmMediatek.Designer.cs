@@ -907,7 +907,7 @@ namespace MediaTekDocuments.view
             this.btnLivresSupprimer.TabIndex = 19;
             this.btnLivresSupprimer.Text = "Supprimer";
             this.btnLivresSupprimer.UseVisualStyleBackColor = true;
-            this.btnLivresSupprimer.Click += new System.EventHandler(this.BtnLivresSupprimer_Click);
+            this.btnLivresSupprimer.Click += new System.EventHandler(FrmMediatek.BtnLivresSupprimer_Click);
             // 
             // btnLivresAjouter
             // 
