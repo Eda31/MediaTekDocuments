@@ -191,7 +191,6 @@
     <Compile Include="model\CommandeDocument.cs" />
     <Compile Include="model\Suivi.cs" />
     <Compile Include="model\Utilisateur.cs" />
-    <Compile Include="test\ParutionDansAbonnementTests.cs" />
     <Compile Include="view\FrmAlerte.cs">
       <SubType>Form</SubType>
     </Compile>
