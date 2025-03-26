@@ -44,7 +44,7 @@ namespace MediaTekDocuments.view
         /// <param name="lesCategories">liste des objets de type Genre ou Public ou Rayon</param>
         /// <param name="bdg">bindingsource contenant les informations</param>
         /// <param name="cbx">combobox à remplir</param>
-        public void RemplirComboCategorie(List<Categorie> lesCategories, BindingSource bdg, ComboBox cbx)
+        public static void RemplirComboCategorie(List<Categorie> lesCategories, BindingSource bdg, ComboBox cbx)
         {
             bdg.DataSource = lesCategories;
             cbx.DataSource = bdg;
@@ -379,8 +379,9 @@ namespace MediaTekDocuments.view
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BtnLivresSupprimer_Click(object sender, EventArgs e)
+        private static void BtnLivresSupprimer_Click(object sender, EventArgs e)
         {
+            // Cette méthode est intentionnellement laissée vide.
             /**
             if (dgvLivresListe.SelectedRows.Count > 0)
             {
@@ -405,6 +406,7 @@ namespace MediaTekDocuments.view
         /// <param name="e"></param>
         private void BtnLivresAjouter_Click(object sender, EventArgs e)
         {
+            // Cette méthode est intentionnellement laissée vide.
             /**
             string id = txbLivresNumeroAjout.Text.Trim();
             string titre = txbLivresTitreAjout.Text.Trim();
@@ -459,6 +461,7 @@ namespace MediaTekDocuments.view
         }
         private void BtnLivresMofifier_Click(object sender, EventArgs e)
         {
+            // Cette méthode est intentionnellement laissée vide.
             /**
             // Récupérer les informations du formulaire
             string id = txbLivresNumero.Text;
@@ -500,7 +503,7 @@ namespace MediaTekDocuments.view
             }
             */
         }
-         
+
 
         #endregion
 
@@ -1656,7 +1659,7 @@ namespace MediaTekDocuments.view
         /// <param name="lesSuivi">liste des objets de type Suivi</param>
         /// <param name="bdgSuivi">bindingsource contenant les informations</param>
         /// <param name="cbxNouvelleEtape">combobox à remplir</param>
-        private void RemplirComboSuivi(List<Suivi> lesSuivi, BindingSource bdgSuivi, ComboBox cbxNouvelleEtape)
+        private static void RemplirComboSuivi(List<Suivi> lesSuivi, BindingSource bdgSuivi, ComboBox cbxNouvelleEtape)
         {
             if (lesSuivi != null && lesSuivi.Count > 0)
             {
@@ -1755,6 +1758,17 @@ namespace MediaTekDocuments.view
         }
 
         /// <summary>
+        /// Récupère et affiche les commandes d'un dvd
+        /// </summary>
+        private void AfficheReceptionCommandesDvd()
+        {
+            string idDocument = txbDvdNumRechercheCom.Text;
+            lesCommandesDvd = controller.GetCommandesDvd(idDocument);
+            RemplirReceptionCommandesDvd(lesCommandesDvd);
+            AccesReceptionCommandeGroupBoxDvd(true);
+        }
+
+        /// <summary>
         /// Affichage des informations du DVD sélectionné
         /// </summary>
         /// <param name="dvd">le dvd</param>
@@ -1777,18 +1791,6 @@ namespace MediaTekDocuments.view
             {
                 pcbDvdImageCom.Image = null;
             }
-        }
-
-
-        /// <summary>
-        /// Récupère et affiche les commandes d'un dvd
-        /// </summary>
-        private void AfficheReceptionCommandesDvd()
-        {
-            string idDocument = txbDvdNumRechercheCom.Text;
-            lesCommandesDvd = controller.GetCommandesDvd(idDocument);
-            RemplirReceptionCommandesDvd(lesCommandesDvd);
-            AccesReceptionCommandeGroupBoxDvd(true);
         }
 
         /// <summary>
@@ -1974,10 +1976,7 @@ namespace MediaTekDocuments.view
         /// <param name="e"></param>
         private void CbxNouvelleEtapeDVD_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxNouvelleEtapeDVD.SelectedIndex >= 0)
-            {
-                Suivi suivi = (Suivi)cbxNouvelleEtapeDVD.SelectedItem;
-            }
+            // Bloc vide supprimé car inutile
         }
 
         /// <summary>
@@ -1986,7 +1985,7 @@ namespace MediaTekDocuments.view
         /// <param name="lesSuivi">liste des objets de type Suivi</param>
         /// <param name="bdgSuiviDvd">bindingsource contenant les informations</param>
         /// <param name="cbxNouvelleEtapeDVD">combobox à remplir</param>
-        private void RemplirComboSuiviDvd(List<Suivi> lesSuivi, BindingSource bdgSuiviDvd, ComboBox cbxNouvelleEtapeDVD)
+        private static void RemplirComboSuiviDvd(List<Suivi> lesSuivi, BindingSource bdgSuiviDvd, ComboBox cbxNouvelleEtapeDVD)
         {
             bdgSuiviDvd.DataSource = lesSuivi;
             cbxNouvelleEtapeDVD.DataSource = bdgSuiviDvd;
@@ -2080,6 +2079,27 @@ namespace MediaTekDocuments.view
         }
 
         /// <summary>
+        /// Récupère et affiche les commandes d'une revue
+        /// </summary>
+        private void AfficheReceptionCommandesRevue()
+        {
+            string idRevue = TxbRevueNumRechercheCom.Text;
+            lesCommandesRevue = controller.GetCommandesRevue(idRevue);
+
+            if (lesCommandesRevue != null && lesCommandesRevue.Count > 0)
+            {
+                lesCommandesRevue = lesCommandesRevue.OrderByDescending(o => o.DateCommande).ToList();
+                RemplirReceptionCommandesRevue(lesCommandesRevue);
+                AccesReceptionCommandeGroupBoxRevue(true);
+            }
+            else
+            {
+                MessageBox.Show("Aucune commande trouvée pour cette revue.");
+                DgvReceptionCommandesListeRevue.DataSource = null;
+            }
+        }
+
+        /// <summary>
         /// Affichage des informations d'une revue sélectionné
         /// </summary>
         /// <param name="revue">le revue</param>
@@ -2100,27 +2120,6 @@ namespace MediaTekDocuments.view
             catch
             {
                 PcbCommandeRevuesImage.Image = null;
-            }
-        }
-
-        /// <summary>
-        /// Récupère et affiche les commandes d'une revue
-        /// </summary>
-        private void AfficheReceptionCommandesRevue()
-        {
-            string idRevue = TxbRevueNumRechercheCom.Text;
-            lesCommandesRevue = controller.GetCommandesRevue(idRevue);
-
-            if (lesCommandesRevue != null && lesCommandesRevue.Count > 0)
-            {
-                lesCommandesRevue = lesCommandesRevue.OrderByDescending(o => o.DateCommande).ToList();
-                RemplirReceptionCommandesRevue(lesCommandesRevue);
-                AccesReceptionCommandeGroupBoxRevue(true);
-            }
-            else
-            {
-                MessageBox.Show("Aucune commande trouvée pour cette revue.");
-                DgvReceptionCommandesListeRevue.DataSource = null;
             }
         }
 
@@ -2292,11 +2291,9 @@ namespace MediaTekDocuments.view
         private void DgvReceptionCommandesListeRevue_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Vérifier si une ligne valide est sélectionnée
-            if (e.RowIndex >= 0 && DgvReceptionCommandesListeRevue.SelectedRows.Count > 0)
+            if (e.RowIndex >= 0 && DgvReceptionCommandesListeRevue.SelectedRows.Count > 0 && 
+                DgvReceptionCommandesListeRevue.SelectedRows[0].DataBoundItem is Abonnement abonnement)
             {
-                // Récupérer l'abonnement sélectionné
-                if (DgvReceptionCommandesListeRevue.SelectedRows[0].DataBoundItem is Abonnement abonnement)
-                {
                     // Afficher les informations dans les champs de modification
                     TxbNumRevueComModifier.Text = abonnement.IdRevue;
                     TxbNumComRevueModifier.Text = abonnement.Id;
@@ -2304,7 +2301,6 @@ namespace MediaTekDocuments.view
                     DtpCommandeDateRevueModifier.Enabled = false; // Empêcher la modification de la date de commande
                     DtpCommandeDateFinRevueModifier.Value = abonnement.DateFinAbonnement;
                     TxbMontantCommandeRevueModifier.Text = abonnement.Montant.ToString(); // Ajout du montant
-                }
             }
         }
 
@@ -2328,7 +2324,7 @@ namespace MediaTekDocuments.view
             }
             // Vérifier si des exemplaires sont rattachés à cette commande
             List<Exemplaire> exemplaires = controller.GetExemplairesRevue(abonnement.IdRevue);
-            bool exemplaireExiste = exemplaires.Any(ex => controller.ParutionDansAbonnement(abonnement.DateCommande, abonnement.DateFinAbonnement, ex.DateAchat));
+            bool exemplaireExiste = exemplaires.Any(ex => FrmMediatekController.ParutionDansAbonnement(abonnement.DateCommande, abonnement.DateFinAbonnement, ex.DateAchat));
             if (exemplaireExiste)
             {
                 MessageBox.Show("Impossible de supprimer la commande, des exemplaires y sont rattachés.", "Erreur");

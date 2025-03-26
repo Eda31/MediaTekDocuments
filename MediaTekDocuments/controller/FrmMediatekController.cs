@@ -233,9 +233,9 @@ namespace MediaTekDocuments.controller
         /// <param name="dateFinAbonnement"></param>
         /// <param name="dateParution"></param>
         /// <returns></returns>
-        public bool ParutionDansAbonnement(DateTime dateCommande, DateTime dateFinAbonnement, DateTime dateParution)
+        public static bool ParutionDansAbonnement(DateTime dateCommande, DateTime dateFinAbonnement, DateTime dateParution)
         {
-            return access.ParutionDansAbonnement(dateCommande, dateFinAbonnement, dateParution);
+            return Access.ParutionDansAbonnement(dateCommande, dateFinAbonnement, dateParution);
         }
 
         /// <summary>

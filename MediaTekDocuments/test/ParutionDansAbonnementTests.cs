@@ -9,9 +9,9 @@ namespace MediaTekDocuments.test
         [TestMethod]
         public void Test_ParutionDansAbonnement_DansIntervalle()
         {
-            DateTime dateCommande = new DateTime(2024, 1, 1);
-            DateTime dateFin = new DateTime(2024, 12, 31);
-            DateTime dateParution = new DateTime(2024, 6, 15);
+            DateTime dateCommande = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            DateTime dateFin = new DateTime(2024, 12, 31, 23, 59, 59, DateTimeKind.Utc);
+            DateTime dateParution = new DateTime(2024, 6, 15, 0, 0, 0, DateTimeKind.Utc);
 
             bool result = ParutionDansAbonnement(dateCommande, dateFin, dateParution);
 
@@ -21,9 +21,9 @@ namespace MediaTekDocuments.test
         [TestMethod]
         public void Test_ParutionDansAbonnement_HorsIntervalle_Avant()
         {
-            DateTime dateCommande = new DateTime(2024, 1, 1);
-            DateTime dateFin = new DateTime(2024, 12, 31);
-            DateTime dateParution = new DateTime(2023, 12, 31);
+            DateTime dateCommande = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            DateTime dateFin = new DateTime(2024, 12, 31, 23, 59, 59, DateTimeKind.Utc);
+            DateTime dateParution = new DateTime(2023, 12, 31, 0, 0, 0, DateTimeKind.Utc);
 
             bool result = ParutionDansAbonnement(dateCommande, dateFin, dateParution);
 
@@ -33,16 +33,16 @@ namespace MediaTekDocuments.test
         [TestMethod]
         public void Test_ParutionDansAbonnement_HorsIntervalle_Apres()
         {
-            DateTime dateCommande = new DateTime(2024, 1, 1);
-            DateTime dateFin = new DateTime(2024, 12, 31);
-            DateTime dateParution = new DateTime(2025, 1, 1);
+            DateTime dateCommande = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            DateTime dateFin = new DateTime(2024, 12, 31, 23, 59, 59, DateTimeKind.Utc);
+            DateTime dateParution = new DateTime(2025, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
             bool result = ParutionDansAbonnement(dateCommande, dateFin, dateParution);
 
             Assert.IsFalse(result); // Vérifier si c'est bien FALSE
         }
 
-        private bool ParutionDansAbonnement(DateTime dateCommande, DateTime dateFin, DateTime dateParution)
+        private static bool ParutionDansAbonnement(DateTime dateCommande, DateTime dateFin, DateTime dateParution)
         {
             return dateParution >= dateCommande && dateParution <= dateFin;
         }

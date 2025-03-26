@@ -219,7 +219,7 @@ namespace MediaTekDocuments.dal
         /// <param name="nom"></param>
         /// <param name="valeur"></param>
         /// <returns>couple au format json</returns>
-        private String ConvertToJson(Object nom, Object valeur)
+        private static String ConvertToJson(Object nom, Object valeur)
         {
             Dictionary<Object, Object> dictionary = new Dictionary<Object, Object>();
             dictionary.Add(nom, valeur);
@@ -582,7 +582,7 @@ namespace MediaTekDocuments.dal
         /// <param name="dateFinAbonnement"></param>
         /// <param name="dateParution"></param>
         /// <returns></returns>
-        public bool ParutionDansAbonnement(DateTime dateCommande, DateTime dateFinAbonnement, DateTime dateParution)
+        public static bool ParutionDansAbonnement(DateTime dateCommande, DateTime dateFinAbonnement, DateTime dateParution)
         {
             return dateParution >= dateCommande && dateParution <= dateFinAbonnement;
         }
