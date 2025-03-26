@@ -2061,6 +2061,7 @@ namespace MediaTekDocuments.view
                 if (revue != null)
                 {
                     AfficheReceptionCommandesRevue(revue);
+                    TxbNumRevueCom.Text = TxbRevueNumRechercheCom.Text;
                 }
                 else
                 {
@@ -2070,7 +2071,7 @@ namespace MediaTekDocuments.view
         }
 
         /// <summary>
-        /// Affichage des informations du dvd sélectionné et les commandes liées à cette revue
+        /// Affichage des informations de la revue sélectionné et les commandes liées à cette revue
         /// </summary>
         private void AfficheReceptionCommandesRevue(Revue revue)
         {
@@ -2081,7 +2082,7 @@ namespace MediaTekDocuments.view
         /// <summary>
         /// Affichage des informations d'une revue sélectionné
         /// </summary>
-        /// <param name="dvd">le dvd</param>
+        /// <param name="revue">le revue</param>
         private void AfficheRevueInfosCom(Revue revue)
         {
             TxbCommandeRevuesTitre.Text = revue.Titre;
