@@ -502,10 +502,10 @@ namespace MediaTekDocuments.dal
         /// <returns>true si l'insertion a pu se faire (retour != null)</returns>
         public bool CreerAbonnement(Abonnement abonnement)
         {
-            String jsonCommande = JsonConvert.SerializeObject(abonnement, new CustomDateTimeConverter());
+            String jsonAbonnement = JsonConvert.SerializeObject(abonnement, new CustomDateTimeConverter());
             try
             {
-                JObject jsonResponse = api.RecupDistant(POST, "abonnement", "champs=" + jsonCommande);
+                JObject jsonResponse = api.RecupDistant(POST, "abonnement", "champs=" + jsonAbonnement);
                 if (jsonResponse != null && (int)jsonResponse["code"] == 200)
                 {
                     return true;
@@ -518,7 +518,7 @@ namespace MediaTekDocuments.dal
             }
             catch (Exception ex)
             {
-                Log.Fatal("Access.CreerAbonnement catch jsonCommande={0} erreur={1}", jsonCommande, ex.Message);
+                Log.Fatal("Access.CreerAbonnement catch jsonCommande={0} erreur={1}", jsonAbonnement, ex.Message);
                 Console.WriteLine(ex.Message);
             }
             return false;
