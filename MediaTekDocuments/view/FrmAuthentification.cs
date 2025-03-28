@@ -1,6 +1,6 @@
-﻿using MediaTekDocuments.model;
+﻿using MediaTekDocuments.controller;
+using MediaTekDocuments.model;
 using System;
-using MediaTekDocuments.controller;
 using System.Windows.Forms;
 
 namespace MediaTekDocuments.view

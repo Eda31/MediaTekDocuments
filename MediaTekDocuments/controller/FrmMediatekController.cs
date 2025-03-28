@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using MediaTekDocuments.dal;
 using MediaTekDocuments.model;
-using MediaTekDocuments.dal;
 using System;
+using System.Collections.Generic;
 
 namespace MediaTekDocuments.controller
 {

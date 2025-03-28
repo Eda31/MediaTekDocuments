@@ -2291,16 +2291,16 @@ namespace MediaTekDocuments.view
         private void DgvReceptionCommandesListeRevue_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Vérifier si une ligne valide est sélectionnée
-            if (e.RowIndex >= 0 && DgvReceptionCommandesListeRevue.SelectedRows.Count > 0 && 
+            if (e.RowIndex >= 0 && DgvReceptionCommandesListeRevue.SelectedRows.Count > 0 &&
                 DgvReceptionCommandesListeRevue.SelectedRows[0].DataBoundItem is Abonnement abonnement)
             {
-                    // Afficher les informations dans les champs de modification
-                    TxbNumRevueComModifier.Text = abonnement.IdRevue;
-                    TxbNumComRevueModifier.Text = abonnement.Id;
-                    DtpCommandeDateRevue.Value = abonnement.DateCommande;
-                    DtpCommandeDateRevueModifier.Enabled = false; // Empêcher la modification de la date de commande
-                    DtpCommandeDateFinRevueModifier.Value = abonnement.DateFinAbonnement;
-                    TxbMontantCommandeRevueModifier.Text = abonnement.Montant.ToString(); // Ajout du montant
+                // Afficher les informations dans les champs de modification
+                TxbNumRevueComModifier.Text = abonnement.IdRevue;
+                TxbNumComRevueModifier.Text = abonnement.Id;
+                DtpCommandeDateRevue.Value = abonnement.DateCommande;
+                DtpCommandeDateRevueModifier.Enabled = false; // Empêcher la modification de la date de commande
+                DtpCommandeDateFinRevueModifier.Value = abonnement.DateFinAbonnement;
+                TxbMontantCommandeRevueModifier.Text = abonnement.Montant.ToString(); // Ajout du montant
             }
         }
 
