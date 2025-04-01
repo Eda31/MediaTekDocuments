@@ -3,6 +3,9 @@ using System;
 
 namespace MediaTekDocuments.dal.Tests
 {
+    /// <summary>
+    /// Classe de tests sur la classe Access
+    /// </summary>
     [TestClass]
     public class AccessTests
     {

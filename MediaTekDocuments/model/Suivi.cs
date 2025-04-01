@@ -1,5 +1,8 @@
 ﻿namespace MediaTekDocuments.model
 {
+    /// <summary>
+    /// Classe métier Suivi : contient des propriétés spécifiques aux suivis
+    /// </summary>
     public class Suivi
     {
         public string Id { get; }

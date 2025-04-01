@@ -4,6 +4,9 @@ using System.Globalization;
 
 namespace MediaTekDocuments.model.Tests
 {
+    /// <summary>
+    /// Classe de test de la classe Commande.
+    /// </summary>
     [TestClass()]
     public class CommandeTests
     {

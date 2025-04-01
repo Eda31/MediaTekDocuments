@@ -2,6 +2,9 @@
 
 namespace MediaTekDocuments.model.Tests
 {
+    /// <summary>
+    /// Classe de test de la classe Suivi.
+    /// </summary>
     [TestClass()]
     public class SuiviTests
     {

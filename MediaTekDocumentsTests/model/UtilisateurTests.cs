@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace MediaTekDocuments.model.Tests
 {
+    /// <summary>
+    /// Classe de test de la classe Utilisateur.
+    /// </summary>
     [TestClass()]
     public class UtilisateurTests
     {

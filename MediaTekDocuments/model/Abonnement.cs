@@ -2,6 +2,9 @@
 
 namespace MediaTekDocuments.model
 {
+    /// <summary>
+    /// Classe métier Abonnement
+    /// </summary>
     public class Abonnement
     {
         public string Id { get; set; }

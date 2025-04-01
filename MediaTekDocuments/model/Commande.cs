@@ -2,6 +2,9 @@
 
 namespace MediaTekDocuments.model
 {
+    /// <summary>
+    /// Classe métier Commande (réunit les informations des classes LivreDvd et Suivi)
+    /// </summary>
     public class Commande
     {
         public string Id { get; set; }

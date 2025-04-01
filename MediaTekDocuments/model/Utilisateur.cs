@@ -1,5 +1,8 @@
 ﻿namespace MediaTekDocuments.model
 {
+    /// <summary>
+    /// Classe métier Utilisateur : contient des propriétés spécifiques aux utilisateurs
+    /// </summary>
     public class Utilisateur
     {
         public string Id { get; set; }
