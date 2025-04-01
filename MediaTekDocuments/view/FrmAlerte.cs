@@ -6,12 +6,19 @@ using System.Windows.Forms;
 
 namespace MediaTekDocuments.view
 {
+    /// <summary>
+    /// Formulaire d'alerte des abonnements
+    /// </summary>
     public partial class FrmAlerte : Form
     {
         private readonly FrmMediatekController controller;
         private readonly List<Abonnement> abonnements;
         private readonly Utilisateur utilisateur;
 
+        /// <summary>
+        /// Constructeur de la classe FrmAlerte
+        /// </summary>
+        /// <param name="utilisateur"></param>
         public FrmAlerte(Utilisateur utilisateur)
         {
             InitializeComponent();

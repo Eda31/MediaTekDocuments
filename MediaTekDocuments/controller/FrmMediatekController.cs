@@ -186,20 +186,21 @@ namespace MediaTekDocuments.controller
         {
             return access.GetCommandesDvd(idDocuement);
         }
+
         /// <summary>
-        /// récupère les commandes d'un dvd
+        /// récupère les commandes d'une revue
         /// </summary>
-        /// <param name="idDocuement">id du dvd concernée</param>
-        /// <returns>Liste d'objets dvd</returns>
+        /// <param name="idDocument">id de la revue concernée</param>
+        /// <returns>Liste d'objets Abonnement</returns>
         public List<Abonnement> GetCommandesRevue(string idDocument)
         {
             return access.GetCommandesRevue(idDocument);
         }
 
         /// <summary>
-        /// Crée une commande d'une revue
+        /// Crée un abonnement à une revue
         /// </summary>
-        /// <param name="commande">L'objet Commande concerné</param>
+        /// <param name="abonnement">L'objet Abonnement concerné</param>
         /// <returns>True si la création a pu se faire</returns>
         public bool CreerAbonnement(Abonnement abonnement)
         {

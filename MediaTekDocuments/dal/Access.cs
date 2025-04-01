@@ -187,7 +187,7 @@ namespace MediaTekDocuments.dal
         /// <typeparam name="T"></typeparam>
         /// <param name="methode">verbe HTTP (GET, POST, PUT, DELETE)</param>
         /// <param name="message">information envoyée dans l'url</param>
-        /// <param name="parametres">paramètres à envoyer dans le body, au format "chp1=val1&chp2=val2&..."</param>
+        /// <param name="parametres">paramètres à envoyer dans le body</param>
         /// <returns>liste d'objets récupérés (ou liste vide)</returns>
         private List<T> TraitementRecup<T>(String methode, String message, String parametres)
         {
@@ -312,7 +312,7 @@ namespace MediaTekDocuments.dal
                 string jsonLivre = JsonConvert.SerializeObject(livre, new CustomDateTimeConverter());
                 JObject jsonResponse = api.RecupDistant(POST, "livre", "champs=" + jsonLivre);
                 // Vérification de la réponse de l'API
-                if (jsonResponse != null && (int)jsonResponse["code"] == 200)
+                if (jsonResponse != null  (int)jsonResponse["code"] == 200)
                 {
                     return true;
                 }
@@ -337,7 +337,7 @@ namespace MediaTekDocuments.dal
                 string jsonLivre = JsonConvert.SerializeObject(livre, new CustomDateTimeConverter());
                 JObject jsonResponse = api.RecupDistant("PUT", "livre", "champs=" + jsonLivre);
                 // Vérification de la réponse de l'API
-                if (jsonResponse != null && (int)jsonResponse["code"] == 200)
+                if (jsonResponse != null  (int)jsonResponse["code"] == 200)
                 {
                     return true;
                 }

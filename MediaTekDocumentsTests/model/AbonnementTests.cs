@@ -4,6 +4,9 @@ using System.Globalization;
 
 namespace MediaTekDocuments.model.Tests
 {
+    /// <summary>
+    /// Classe de test de la classe Abonnement
+    /// </summary>
     [TestClass()]
     public class AbonnementTests
     {

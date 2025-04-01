@@ -2212,7 +2212,7 @@ namespace MediaTekDocuments.view
         /// <summary>
         /// Remplit le DataGridView des commandes avec la liste reçue en paramètre
         /// </summary>
-        /// <param name="commandes">liste de commandes</param>
+        /// <param name="lesCommandesRevue">liste de commandes</param>
         private void RemplirReceptionCommandesRevue(List<Abonnement> lesCommandesRevue)
         {
             if (lesCommandesRevue != null)

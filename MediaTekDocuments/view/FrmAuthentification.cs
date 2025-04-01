@@ -5,10 +5,16 @@ using System.Windows.Forms;
 
 namespace MediaTekDocuments.view
 {
+    /// <summary>
+    /// Formulaire d'authentification
+    /// </summary>
     public partial class FrmAuthentification : Form
     {
         private readonly FrmMediatekController controller;
 
+        /// <summary>
+        /// Constructeur de la classe FrmAuthentification
+        /// </summary>
         public FrmAuthentification()
         {
             InitializeComponent();
