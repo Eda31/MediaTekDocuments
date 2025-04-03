@@ -101,7 +101,6 @@ namespace MediaTekDocuments.controller
         /// <summary>
         /// Supprimer un livre
         /// </summary>
-        /// <param name="id"></param>
         /// <returns></returns>
         public bool DeleteLivre(string id)
         {
@@ -111,7 +110,6 @@ namespace MediaTekDocuments.controller
         /// <summary>
         /// Ajouter un livre
         /// </summary>
-        /// <param name="livre"></param>
         /// <returns></returns>
         public bool AjoutLivre(Livre livre)
         {
@@ -121,7 +119,6 @@ namespace MediaTekDocuments.controller
         /// <summary>
         /// Modifier un livre
         /// </summary>
-        /// <param name="livre"></param>
         /// <returns></returns>
         public bool ModifierLivre(Livre livre)
         {

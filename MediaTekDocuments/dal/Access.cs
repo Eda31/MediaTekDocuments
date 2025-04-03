@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace MediaTekDocuments.dal
 {
@@ -267,7 +269,6 @@ namespace MediaTekDocuments.dal
         /// <summary>
         /// Suppresion d'un livre dans la base de données
         /// </summary>
-        /// <param name="id"></param>
         /// <returns></returns>
         public bool DeleteLivre(string id)
         {
@@ -304,7 +305,6 @@ namespace MediaTekDocuments.dal
         /// <summary>
         /// Ajout d'un livre dans la base de données
         /// </summary>
-        /// <param name="livre"></param>
         /// <returns></returns>
         public bool AjoutLivre(Livre livre)
         {
@@ -641,7 +641,19 @@ namespace MediaTekDocuments.dal
                 if (utilisateurs != null && utilisateurs.Count > 0)
                 {
                     Utilisateur utilisateur = utilisateurs[0];
-                    return utilisateur;
+
+                    // Hacher le mot de passe entré
+                    using (SHA256 sha256 = SHA256.Create())
+                    {
+                        byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(motDePasse));
+                        string hashString = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+
+                        // Comparaison du hash avec celui récupéré
+                        if (hashString == utilisateur.MotDePasse)
+                        {
+                            return utilisateur;
+                        }
+                    }
                 }
             }
             catch (Exception ex)

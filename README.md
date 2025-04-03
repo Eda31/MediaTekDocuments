@@ -1,4 +1,9 @@
 # MediatekDocuments
+
+🔗 Ce dépôt est une extension du dépôt d'origine disponible ici :  
+👉 [Dépôt d'origine sur GitHub](https://github.com/CNED-SLAM/mediatekdocuments)  
+Le dépôt d'origine présente l'application initiale dans son intégralité.
+
 Cette application permet de gérer les documents (livres, DVD, revues) d'une médiathèque. Elle a été codée en C# sous Visual Studio 2019. C'est une application de bureau, prévue d'être installée sur plusieurs postes accédant à la même base de données.<br>
 L'application exploite une API REST pour accéder à la BDD MySQL. Des explications sont données plus loin, ainsi que le lien de récupération.
 ## Présentation
@@ -52,6 +57,8 @@ Voici sa structure :<br>
 ![img4](https://github.com/CNED-SLAM/MediaTekDocuments/assets/100127886/4314f083-ec8b-4d27-9746-fecd1387d77b)
 <br>On distingue les documents "génériques" (ce sont les entités Document, Revue, Livres-DVD, Livre et DVD) des documents "physiques" qui sont les exemplaires de livres ou de DVD, ou bien les numéros d’une revue ou d’un journal.<br>
 Chaque exemplaire est numéroté à l’intérieur du document correspondant, et a donc un identifiant relatif. Cet identifiant est réel : ce n'est pas un numéro automatique. <br>
+La base de données 'mediatek86 ' est au format MySQL mise à jour.<br>
+![mediatekdocument mise a jour](https://github.com/user-attachments/assets/fad0ab02-04cf-4c41-b27d-d646b6eed234)
 Un exemplaire est caractérisé par :<br>
 . un état d’usure, les différents états étant mémorisés dans la table Etat ;<br>
 . sa date d’achat ou de parution dans le cas d’une revue ;<br>
@@ -75,3 +82,47 @@ Ce mode opératoire permet d'installer l'application pour pouvoir travailler des
 - Installer Visual Studio 2019 entreprise et les extension Specflow et newtonsoft.json (pour ce dernier, voir l'article "Accéder à une API REST à partir d'une application C#" dans le wiki de ce dépôt : consulter juste le début pour la configuration, car la suite permet de comprendre le code existant).<br>
 - Télécharger le code et le dézipper puis renommer le dossier en "mediatekdocuments".<br>
 - Récupérer et installer l'API REST nécessaire (https://github.com/CNED-SLAM/rest_mediatekdocuments) ainsi que la base de données (les explications sont données dans le readme correspondant).
+
+## 🧩 Fonctionnalités ajoutées dans ce projet
+
+### 📦 1. Gestion des commandes
+Fonctionnalités ajoutées pour gérer les commandes de documents :
+- ➕ Ajouter une commande de **livre** ou **DVD**
+- ✏️ Modifier une commande existante (date de commande, durée, etc.)
+- 🗑 Supprimer une commande
+
+Ces opérations sont disponibles depuis les interfaces de gestion des livres et DVD.
+
+### 📅 2. Gestion des abonnements aux revues
+Ajout d’une interface dédiée pour les abonnements :
+- ➕ Ajouter un nouvel abonnement à une revue
+- ✏️ Modifier un abonnement existant
+- 🗑 Supprimer un abonnement
+
+Permet de suivre la durée des abonnements et leur date de fin.
+
+### 🔒 3. Système d'authentification
+Implémentation d’un écran de connexion :
+- Identification via `FrmAuthentification`
+- Vérification des identifiants avec l’**API REST**
+- Accès bloqué si les identifiants sont incorrects
+
+### 🛠 4. Journalisation des actions (Logging)
+- Intégration de la bibliothèque **Serilog**
+- Traçabilité des actions critiques (connexion, ajout, suppression...)
+- Logs enregistrés dans `logs/log.txt`
+
+### 🧪 5. Tests unitaires
+- Création de tests unitaires pour les classes métier du dossier `model`
+- Utilisation de **MSTest** avec `[TestClass]` / `[TestMethod]`
+- Couverture des cas simples et erreurs attendues
+
+### 📄 6. Documentation technique
+- Générée automatiquement via **Visual Studio XML Comments**
+- Ajout de commentaires normalisés dans toutes les classes
+- Export de la doc technique en `.xml` ou `.html`
+
+### 📦 7. Intégration API REST
+- Connexion à l’API REST distante pour la récupération des documents, livres, revues, etc.
+- Appels GET / POST via `Access.cs`
+- Utilisation d'un fichier `.env` pour la configuration

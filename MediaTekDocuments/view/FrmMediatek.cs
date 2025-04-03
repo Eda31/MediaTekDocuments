@@ -380,6 +380,7 @@ namespace MediaTekDocuments.view
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private static void BtnLivresSupprimer_Click(object sender, EventArgs e)
+#pragma warning disable CS1587 // Le commentaire XML n'est pas placé dans un élément valide du langage
         {
             // Cette méthode est intentionnellement laissée vide.
             /**
@@ -398,6 +399,7 @@ namespace MediaTekDocuments.view
             }
             */
         }
+#pragma warning restore CS1587 // Le commentaire XML n'est pas placé dans un élément valide du langage
 
         /// <summary>
         /// Ajout d'un livre
@@ -405,6 +407,7 @@ namespace MediaTekDocuments.view
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void BtnLivresAjouter_Click(object sender, EventArgs e)
+#pragma warning disable CS1587 // Le commentaire XML n'est pas placé dans un élément valide du langage
         {
             // Cette méthode est intentionnellement laissée vide.
             /**
@@ -459,7 +462,9 @@ namespace MediaTekDocuments.view
             }
             */
         }
+#pragma warning restore CS1587 // Le commentaire XML n'est pas placé dans un élément valide du langage
         private void BtnLivresMofifier_Click(object sender, EventArgs e)
+#pragma warning disable CS1587 // Le commentaire XML n'est pas placé dans un élément valide du langage
         {
             // Cette méthode est intentionnellement laissée vide.
             /**
@@ -503,6 +508,7 @@ namespace MediaTekDocuments.view
             }
             */
         }
+#pragma warning restore CS1587 // Le commentaire XML n'est pas placé dans un élément valide du langage
 
 
         #endregion
